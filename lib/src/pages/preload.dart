@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class PreloadPage extends StatefulWidget {
   const PreloadPage({super.key});
@@ -9,9 +10,9 @@ class PreloadPage extends StatefulWidget {
 
 class _PreloadPage extends State<PreloadPage> {
   bool loading = true;
-
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
         body: Center(
       child: Column(
@@ -25,7 +26,7 @@ class _PreloadPage extends State<PreloadPage> {
               ? Container(
                   margin: const EdgeInsets.all(20),
                   child: const Text(
-                    'Carregando informações...',
+                    'Carregando',
                     style: TextStyle(fontSize: 16),
                   ))
               : Container(),
