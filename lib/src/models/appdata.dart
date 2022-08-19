@@ -13,7 +13,6 @@ class AppData with ChangeNotifier {
   Future<bool> requestData() async {
     final response =
         await http.get(Uri.parse('https://api.b7web.com.br/flutter1wb/'));
-
     if (response.statusCode == 200) {
       setData(jsonDecode(response.body));
       return true;
