@@ -15,22 +15,18 @@ class _PreloadPage extends State<PreloadPage> {
   bool loading = true;
 
   void requestInfo() async {
-    await Future.delayed(const Duration(seconds: 1));
-
+    await Future.delayed(const Duration(seconds: 2));
     setState(() {
       loading = true;
     });
-
-    bool req = await Provider.of<AppData>(context,listen: false).requestData();
-
+    bool req = await Provider.of<AppData>(context, listen: false).requestData();
     if (req) {
-      // Ir Para Home
-      print('Deu Certo');
-    } 
-
-    setState(() {
-      loading = false;
-    });
+      Navigator.pushReplacementNamed(context, '/home');
+    } else {
+      setState(() {
+        loading = false;
+      });
+    }
   }
 
   void initState() {
