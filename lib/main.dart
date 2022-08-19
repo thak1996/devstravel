@@ -1,7 +1,8 @@
-import 'package:devstravel/src/pages/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:devstravel/src/pages/home.dart';
 import 'src/models/appdata.dart';
+import 'src/pages/preload.dart';
 
 void main() => runApp(
   MultiProvider(
@@ -18,9 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
+        '/preload': (context) => PreloadPage(),
         '/home': (context) => HomePage(),
       },
-      initialRoute: '/home',
+      initialRoute: '/preload',
     );
   }
 }
