@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+
+import '../models/appdata.dart';
 
 class PreloadPage extends StatefulWidget {
   const PreloadPage({super.key});
@@ -10,6 +13,31 @@ class PreloadPage extends StatefulWidget {
 
 class _PreloadPage extends State<PreloadPage> {
   bool loading = true;
+
+  void requestInfo() async {
+    await Future.delayed(const Duration(seconds: 1));
+
+    setState(() {
+      loading = true;
+    });
+
+    bool req = await Provider.of<AppData>(context,listen: false).requestData();
+
+    if (req) {
+      // Ir Para Home
+      print('Deu Certo');
+    } 
+
+    setState(() {
+      loading = false;
+    });
+  }
+
+  void initState() {
+    super.initState();
+    requestInfo();
+  }
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
