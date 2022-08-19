@@ -1,3 +1,4 @@
+import 'package:devstravel/src/partials/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:devstravel/src/models/appdata.dart';
@@ -15,9 +16,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppData>(
         builder: (ctx, appdata, child) => Scaffold(
-              appBar: AppBar(
-                title: const Text('Home'),
-              ),
+              appBar: CustomAppBar(),
               body: Center(
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +39,7 @@ class HomePage extends StatelessWidget {
                       top: 30,
                     ),
                     child: Text(
-                      'Seu guioa de viagem perfeito',
+                      'Seu guia de viagem perfeito',
                       style: styles,
                     ),
                   )
