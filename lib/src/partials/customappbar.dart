@@ -1,40 +1,64 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-// Widget CustomAppBar() {
-//   return AppBar(
-//     title: Text('AppBar Peronalizado'),
-//   );
-// }
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  CustomAppBar({
+    Key? key,
+    required this.title,
+    required this.hideSearch,
+  }) : super(key: key);
+
+  final String title;
+  bool hideSearch = true;
+  bool showDrawer = true;
+  bool showBack = true;
+
+  IconButton drawerIcon = IconButton(
+    icon: const Icon(Icons.menu, color: Colors.black, size: 30),
+    onPressed: () {},
+  );
+
+  IconButton backIcon = IconButton(
+    icon: const Icon(Icons.arrow_back, color: Colors.black, size: 30),
+    onPressed: () {},
+  );
+
+  void leadingButton() {
+    IconButton leadingButton;
+    if (showDrawer) {
+      leadingButton = drawerIcon;
+    }
+    if (showBack) {
+      leadingButton = backIcon;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      centerTitle: false,
       backgroundColor: Colors.white,
       elevation: 0,
-      title: const Text(
-        'AppBar Personalizado',
-        style: TextStyle(
+      centerTitle: false,
+      title: Text(
+        title,
+        style: const TextStyle(
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
             fontFamily: 'Helvetica Neue'),
       ),
-      leading: IconButton(
-        icon: const Icon(Icons.menu, color: Colors.black,size: 30),
-        onPressed: () {},
-      ),
-      actions: <Widget>[
-        IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.search,
-              color: Colors.black,
-              size: 30,
-            ))
+      leading: leadingButton(),
+      actions: [
+        hideSearch
+            ? IconButton(
+                icon: const Icon(
+                  Icons.search,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                onPressed: () {},
+              )
+            : Container()
       ],
     );
   }

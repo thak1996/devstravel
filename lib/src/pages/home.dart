@@ -16,11 +16,14 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<AppData>(
         builder: (ctx, appdata, child) => Scaffold(
-              appBar: CustomAppBar(),
+              appBar: CustomAppBar(
+                title: 'Página Home',
+                hideSearch: true,
+              ),
               body: Center(
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
+                children: [
                   Container(
                     margin: const EdgeInsets.only(
                       bottom: 30,
