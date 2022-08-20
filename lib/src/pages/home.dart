@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         builder: (ctx, appdata, child) => Scaffold(
               appBar: CustomAppBar(
                 title: 'Página Home',
-                hideSearch: true,
+                hideSearch: true,                
               ),
               body: Center(
                   child: Column(

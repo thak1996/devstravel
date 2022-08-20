@@ -42,7 +42,7 @@ class _PreloadPage extends State<PreloadPage> {
         body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
+        children: [
           Image.asset(
             'lib/assets/flutter1_devstravel_logo.png',
             width: 200,

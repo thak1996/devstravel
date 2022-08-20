@@ -1,17 +1,18 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   CustomAppBar({
     Key? key,
     required this.title,
-    required this.hideSearch,
+    this.hideSearch = false,
+    this.showDrawer = false,
+    this.showBack = false,
   }) : super(key: key);
 
   final String title;
-  bool hideSearch = true;
-  bool showDrawer = true;
-  bool showBack = true;
+  bool hideSearch;
+  bool showDrawer;
+  bool showBack;
 
   IconButton drawerIcon = IconButton(
     icon: const Icon(Icons.menu, color: Colors.black, size: 30),
@@ -23,14 +24,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     onPressed: () {},
   );
 
-  void leadingButton() {
-    IconButton leadingButton;
+  IconButton? leadingButton() {
     if (showDrawer) {
-      leadingButton = drawerIcon;
+      return drawerIcon;
     }
     if (showBack) {
-      leadingButton = backIcon;
+      return backIcon;
     }
+    return null;
   }
 
   @override
@@ -50,7 +51,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leadingButton(),
       actions: [
         hideSearch
-            ? IconButton(
+            ? Container()
+            : IconButton(
                 icon: const Icon(
                   Icons.search,
                   color: Colors.black,
@@ -58,7 +60,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 onPressed: () {},
               )
-            : Container()
       ],
     );
   }
