@@ -4,18 +4,18 @@ import 'package:provider/provider.dart';
 
 import '../models/appdata.dart';
 
-class PreloadPage extends StatefulWidget {
-  const PreloadPage({super.key});
+class Preload extends StatefulWidget {
+  const Preload({super.key});
 
   @override
-  _PreloadPage createState() => _PreloadPage();
+  State<Preload> createState() => _Preload();
 }
 
-class _PreloadPage extends State<PreloadPage> {
+class _Preload extends State<Preload> {
   bool loading = true;
 
-  void requestInfo() async {
-    await Future.delayed(const Duration(seconds: 2));
+  Future<void> requestInfo() async {
+    Future.delayed(const Duration(seconds: 2));
     setState(() {
       loading = true;
     });
@@ -39,38 +39,39 @@ class _PreloadPage extends State<PreloadPage> {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
-        body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'lib/assets/flutter1_devstravel_logo.png',
-            width: 200,
-          ),
-          loading
-              ? Container(
-                  margin: const EdgeInsets.all(20),
-                  child: const Text(
-                    'Carregando',
-                    style: TextStyle(fontSize: 16),
-                  ))
-              : Container(),
-          loading
-              ? const CircularProgressIndicator(
-                  strokeWidth: 3,
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                )
-              : Container(),
-          !loading
-              ? Container(
-                  margin: const EdgeInsets.all(20),
-                  child: ElevatedButton(
-                    child: const Text('Tentar Novamente'),
-                    onPressed: () {},
-                  ))
-              : Container(),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'lib/assets/flutter1_devstravel_logo.png',
+              width: 200,
+            ),
+            loading
+                ? Container(
+                    margin: const EdgeInsets.all(20),
+                    child: const Text(
+                      'Carregando',
+                      style: TextStyle(fontSize: 16),
+                    ))
+                : Container(),
+            loading
+                ? const CircularProgressIndicator(
+                    strokeWidth: 3,
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                  )
+                : Container(),
+            !loading
+                ? Container(
+                    margin: const EdgeInsets.all(20),
+                    child: ElevatedButton(
+                      child: const Text('Tentar Novamente'),
+                      onPressed: () {},
+                    ))
+                : Container(),
+          ],
+        ),
       ),
-    ));
+    );
   }
 }
