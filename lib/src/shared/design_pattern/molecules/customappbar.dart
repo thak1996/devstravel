@@ -1,3 +1,4 @@
+import 'package:devstravel/src/shared/atyles.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -10,9 +11,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   final String title;
-  bool hideSearch;
-  bool showDrawer;
-  bool showBack;
+  final bool hideSearch;
+  final bool showDrawer;
+  final bool showBack;
 
   IconButton drawerIcon = IconButton(
     icon: const Icon(Icons.menu, color: Colors.black, size: 30),
@@ -40,26 +41,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       centerTitle: false,
-      title: Text(
-        title,
-        style: const TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'Helvetica Neue'),
-      ),
+      title:
+          Text(title, style: h5Primary.copyWith(fontWeight: FontWeight.bold)),
       leading: leadingButton(),
       actions: [
         hideSearch
             ? Container()
             : IconButton(
-                icon: const Icon(
-                  Icons.search,
-                  color: Colors.black,
-                  size: 30,
-                ),
-                onPressed: () {},
-              )
+                icon: const Icon(Icons.search, color: Colors.black, size: 30),
+                onPressed: () {})
       ],
     );
   }

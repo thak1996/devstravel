@@ -1,8 +1,10 @@
+import 'package:devstravel/src/models/appdata.dart';
+import 'package:devstravel/src/shared/atyles.dart';
+import 'package:devstravel/src/shared/design_pattern/atoms/ds_mediaquerry.dart';
+import 'package:devstravel/src/shared/design_pattern/atoms/ds_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import '../models/appdata.dart';
 
 class Preload extends StatefulWidget {
   const Preload({super.key});
@@ -19,7 +21,8 @@ class _Preload extends State<Preload> {
     setState(() {
       loading = true;
     });
-    bool req = await Provider.of<AppData>(context, listen: false).requestData();
+    final bool req =
+        await Provider.of<AppData>(context, listen: false).requestData();
     if (req) {
       Navigator.pushReplacementNamed(context, '/home');
     } else {
@@ -43,31 +46,25 @@ class _Preload extends State<Preload> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'lib/assets/flutter1_devstravel_logo.png',
-              width: 200,
-            ),
+            Image.asset('assets/flutter1_devstravel_logo.png',
+                width: screenSize(context).width * 0.5),
             loading
                 ? Container(
-                    margin: const EdgeInsets.all(20),
-                    child: const Text(
-                      'Carregando',
-                      style: TextStyle(fontSize: 16),
-                    ))
+                    margin: EdgeInsets.all(screenSize(context).height * .02),
+                    child: Text('Carregando',
+                        style: h4Bbold.copyWith(fontSize: 16)))
                 : Container(),
             loading
                 ? const CircularProgressIndicator(
                     strokeWidth: 3,
-                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                  )
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.green))
                 : Container(),
             !loading
                 ? Container(
-                    margin: const EdgeInsets.all(20),
+                    margin: EdgeInsets.all(screenSize(context).height * .02),
                     child: ElevatedButton(
-                      child: const Text('Tentar Novamente'),
-                      onPressed: () {},
-                    ))
+                        child: const DsText(text: 'Tentar Novamente'),
+                        onPressed: () {}))
                 : Container(),
           ],
         ),
