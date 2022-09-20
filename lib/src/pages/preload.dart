@@ -14,28 +14,20 @@ class Preload extends StatefulWidget {
 }
 
 class _Preload extends State<Preload> {
+  bool loading = true;
   @override
   void initState() {
     super.initState();
     requestInfo();
   }
 
-  bool loading = true;
-
   requestInfo() async {
     Future.delayed(const Duration(seconds: 2));
-    setState(() {
-      loading = true;
-    });
     final bool req =
         await Provider.of<AppData>(context, listen: false).requestData();
-    if (req) {
-      Navigator.pushReplacementNamed(context, '/home');
-    } else {
-      setState(() {
-        loading = false;
-      });
-    }
+    req
+        ? Navigator.pushReplacementNamed(context, '/home')
+        : setState(() => loading = false);
   }
 
   @override

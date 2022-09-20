@@ -26,16 +26,11 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: showBack
           ? IconButton(
               icon: const Icon(Icons.arrow_back, color: blackColor, size: 30),
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () => Navigator.pop(context),
             )
           : IconButton(
               icon: const Icon(Icons.menu, color: blackColor, size: 30),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            ),
+              onPressed: () => Scaffold.of(context).openDrawer()),
       actions: [
         hideSearch
             ? IconButton(
@@ -43,9 +38,8 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
                     right: screenSize(context).width * .03,
                     left: screenSize(context).width * .02),
                 icon: const Icon(Icons.search, color: blackColor, size: 30),
-                onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/search');
-                })
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, '/search'))
             : Container(),
       ],
     );
