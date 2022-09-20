@@ -1,6 +1,7 @@
 import 'package:devstravel/src/models/appdata.dart';
 import 'package:devstravel/src/pages/home.dart';
 import 'package:devstravel/src/pages/preload.dart';
+import 'package:devstravel/src/pages/search.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/preload': (context) => const Preload(),
-          '/home': (context) => const HomePage()
+          '/home': (context) => const HomePage(),
+          '/search': (context) => const SearchPage(),
         },
         initialRoute: '/preload');
   }

@@ -1,4 +1,4 @@
-import 'package:devstravel/src/shared/atyles.dart';
+import 'package:devstravel/src/shared/styles.dart';
 import 'package:flutter/material.dart';
 
 class DsText extends StatelessWidget {

@@ -1,4 +1,5 @@
 import 'package:devstravel/src/shared/app_colors.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 //primary color
@@ -154,7 +155,7 @@ const TextStyle miniText = TextStyle(
 );
 
 //Bold
-const TextStyle h4Bbold = TextStyle(
+const TextStyle h4Bold = TextStyle(
   fontSize: 15,
   fontWeight: FontWeight.bold,
   fontFamily: "Helvetica Neue",

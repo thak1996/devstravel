@@ -1,7 +1,7 @@
 import 'package:devstravel/src/models/appdata.dart';
-import 'package:devstravel/src/shared/atyles.dart';
-import 'package:devstravel/src/shared/design_pattern/atoms/ds_mediaquerry.dart';
-import 'package:devstravel/src/shared/design_pattern/atoms/ds_text.dart';
+import 'package:devstravel/src/shared/styles.dart';
+import 'package:devstravel/src/shared/design_system/atoms/ds_mediaquerry.dart';
+import 'package:devstravel/src/shared/design_system/atoms/ds_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -14,9 +14,15 @@ class Preload extends StatefulWidget {
 }
 
 class _Preload extends State<Preload> {
+  @override
+  void initState() {
+    super.initState();
+    requestInfo();
+  }
+
   bool loading = true;
 
-  Future<void> requestInfo() async {
+  requestInfo() async {
     Future.delayed(const Duration(seconds: 2));
     setState(() {
       loading = true;
@@ -33,12 +39,6 @@ class _Preload extends State<Preload> {
   }
 
   @override
-  void initState() {
-    super.initState();
-    requestInfo();
-  }
-
-  @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
@@ -47,12 +47,14 @@ class _Preload extends State<Preload> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/flutter1_devstravel_logo.png',
-                width: screenSize(context).width * 0.5),
+                width: screenSize(context).width * .5,
+                height: screenSize(context).height * .5),
             loading
                 ? Container(
                     margin: EdgeInsets.all(screenSize(context).height * .02),
-                    child: Text('Carregando',
-                        style: h4Bbold.copyWith(fontSize: 16)))
+                    child: DsText(
+                        text: 'Carregando',
+                        style: h4Bold.copyWith(fontSize: 16)))
                 : Container(),
             loading
                 ? const CircularProgressIndicator(
