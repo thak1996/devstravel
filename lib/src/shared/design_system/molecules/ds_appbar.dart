@@ -1,5 +1,6 @@
 import 'package:devstravel/src/shared/app_colors.dart';
 import 'package:devstravel/src/shared/design_system/atoms/ds_mediaquerry.dart';
+import 'package:devstravel/src/shared/design_system/atoms/ds_text.dart';
 import 'package:devstravel/src/shared/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -21,13 +22,11 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: whiteColor,
       elevation: 0,
       centerTitle: false,
-      title:
-          Text(title, style: h5Primary.copyWith(fontWeight: FontWeight.bold)),
+      title: DsText(text: title, style: h5Primary),
       leading: showBack
           ? IconButton(
               icon: const Icon(Icons.arrow_back, color: blackColor, size: 30),
-              onPressed: () => Navigator.pop(context),
-            )
+              onPressed: () => Navigator.pop(context))
           : IconButton(
               icon: const Icon(Icons.menu, color: blackColor, size: 30),
               onPressed: () => Scaffold.of(context).openDrawer()),

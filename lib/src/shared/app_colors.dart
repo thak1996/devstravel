@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //Brand Colors
 const Color primaryColor = Color(0xff000000);
-const Color azulOceano = Color(0xff4E47C2);
+const Color azulOceano = Color(0xFF334BD1);
 const Color azulVioleta = Color(0xff7A75D1);
 const Color azulMaximum = Color(0xffB5B3E6);
 

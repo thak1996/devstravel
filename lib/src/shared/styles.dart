@@ -38,6 +38,13 @@ const TextStyle subTitlePrimary = TextStyle(
   color: primaryColor,
 );
 
+const TextStyle h7Primary = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+  fontFamily: "Helvetica Neue",
+  color: primaryColor,
+);
+
 const TextStyle textSimple = TextStyle(
   fontWeight: FontWeight.w400,
   fontFamily: "Helvetica Neue",

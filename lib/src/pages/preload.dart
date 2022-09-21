@@ -3,7 +3,6 @@ import 'package:devstravel/src/shared/styles.dart';
 import 'package:devstravel/src/shared/design_system/atoms/ds_mediaquerry.dart';
 import 'package:devstravel/src/shared/design_system/atoms/ds_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class Preload extends StatefulWidget {
@@ -21,7 +20,7 @@ class _Preload extends State<Preload> {
     requestInfo();
   }
 
-  requestInfo() async {
+  void requestInfo() async {
     Future.delayed(const Duration(seconds: 2));
     final bool req =
         await Provider.of<AppData>(context, listen: false).requestData();
@@ -32,7 +31,6 @@ class _Preload extends State<Preload> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return Scaffold(
       body: Center(
         child: Column(
