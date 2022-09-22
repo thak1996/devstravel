@@ -15,6 +15,7 @@ const Color textDisable = Color(0xffAFAFAF);
 //B&W
 const Color whiteColor = Color(0xffFEFEFE);
 const Color blackColor = Color(0xff303030);
+const Color transparent = Colors.transparent;
 
 //Alert
 const Color redAlert = Color(0xffBF0000);

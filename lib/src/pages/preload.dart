@@ -25,6 +25,7 @@ class _Preload extends State<Preload> {
     final bool req =
         await Provider.of<AppData>(context, listen: false).requestData();
     req
+        // ignore: use_build_context_synchronously
         ? Navigator.pushReplacementNamed(context, '/home')
         : setState(() => loading = false);
   }

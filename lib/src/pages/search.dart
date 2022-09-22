@@ -13,7 +13,8 @@ class SearchPage extends StatelessWidget {
     return Consumer<AppData>(
       builder: (ctx, appdata, child) => Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
-        appBar: const DsAppBar(title: 'Busque uma Cidade', hideSearch: false),
+        appBar: const DsAppBar(
+            title: 'Busque uma Cidade', hideSearch: false, showBack: true),
         drawer: const DsDrawer(),
         body: RefreshIndicator(
           onRefresh: () => Future<void>.delayed(const Duration(seconds: 3)),

@@ -37,8 +37,7 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
                     right: screenSize(context).width * .03,
                     left: screenSize(context).width * .02),
                 icon: const Icon(Icons.search, color: blackColor, size: 30),
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, '/search'))
+                onPressed: () => Navigator.pushNamed(context, '/search'))
             : Container(),
       ],
     );

@@ -7,6 +7,7 @@ class DsText extends StatelessWidget {
     this.maxLines,
     this.style = textSimple,
     this.overflow = TextOverflow.ellipsis,
+    this.textAlign = TextAlign.start,
     super.key,
   });
 
@@ -14,6 +15,7 @@ class DsText extends StatelessWidget {
   final TextStyle style;
   final int? maxLines;
   final TextOverflow overflow;
+  final TextAlign textAlign;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class DsText extends StatelessWidget {
       overflow: overflow,
       style: style,
       maxLines: maxLines,
+      textAlign: textAlign,
     );
   }
 }
