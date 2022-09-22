@@ -38,7 +38,7 @@ class DsDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.search, color: blackColor),
             title: const DsText(text: 'Buscar Cidade', style: h7Primary),
-            onTap: () => Navigator.pushReplacementNamed(context, '/search'),
+            onTap: () => Navigator.pushNamed(context, '/search'),
           ),
           ListTile(
             leading: const Icon(Icons.favorite, color: blackColor),
