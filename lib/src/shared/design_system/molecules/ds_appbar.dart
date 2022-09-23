@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
   const DsAppBar({
     Key? key,
-    this.hideSearch = true,
+    this.hideSearch = false,
     this.showBack = false,
     required this.title,
   }) : super(key: key);

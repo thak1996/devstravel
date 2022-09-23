@@ -13,9 +13,7 @@ class CityBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
-          right: screenSize(context).height * .01,
-          left: screenSize(context).height * .01),
+      margin: EdgeInsets.all(screenSize(context).height * .01),
       child: GestureDetector(
         onTap: () {
           onTap(data);

@@ -21,9 +21,9 @@ class DsText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      overflow: overflow,
       style: style,
       maxLines: maxLines,
+      overflow: overflow,
       textAlign: textAlign,
     );
   }

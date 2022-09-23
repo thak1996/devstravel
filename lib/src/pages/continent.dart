@@ -11,7 +11,9 @@ import 'package:provider/provider.dart';
 class ContinetPage extends StatelessWidget {
   const ContinetPage({super.key});
 
-  void seeCityAction(index) {}
+  void seeCityAction(context, index) {
+    Navigator.pushNamed(context, '/listcity', arguments: index);
+  }
 
   void cityBoxAction(cityData) {}
 
@@ -44,14 +46,13 @@ class ContinetPage extends StatelessWidget {
                                     "${appdata.data[index]['name']}: ${cities.length}",
                                 style: subTitlePrimary.copyWith(fontSize: 16))),
                         TextButton(
-                            onPressed: () => seeCityAction(index),
+                            onPressed: () => seeCityAction(context, index),
                             child: Padding(
                                 padding: EdgeInsets.only(
-                                  right: screenSize(context).width * .04,
-                                  left: screenSize(context).width * .04,
-                                  bottom: screenSize(context).height * .001,
-                                  top: screenSize(context).height * .001,
-                                ),
+                                    right: screenSize(context).width * .04,
+                                    left: screenSize(context).width * .04,
+                                    bottom: screenSize(context).height * .001,
+                                    top: screenSize(context).height * .001),
                                 child: DsText(
                                     text: 'Ver Cidades',
                                     style: textSimple.copyWith(
@@ -59,20 +60,17 @@ class ContinetPage extends StatelessWidget {
                                         color: Colors.grey))))
                       ]),
                   Container(
-                    height: screenSize(context).height * .20,
-                    margin: EdgeInsets.only(
-                        top: screenSize(context).height * .015,
-                        bottom: screenSize(context).height * .03),
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: cities.length,
-                        itemBuilder: (context, index) {
-                          return CityBox(
-                            data: cities[index],
-                            onTap: cityBoxAction,
-                          );
-                        }),
-                  ),
+                      height: screenSize(context).height * .20,
+                      margin: EdgeInsets.only(
+                          top: screenSize(context).height * .015,
+                          bottom: screenSize(context).height * .03),
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: cities.length,
+                          itemBuilder: (context, index) {
+                            return CityBox(
+                                data: cities[index], onTap: cityBoxAction);
+                          }))
                 ],
               );
             },
