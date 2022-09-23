@@ -47,15 +47,14 @@ class _CityPageState extends State<CityPage> {
                 padding: EdgeInsets.zero,
                 children: [
                   Container(
-                    margin:
-                        EdgeInsets.only(top: screenSize(context).width * .57),
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20))),
-                    child: Column(
-                      children: [
+                      margin:
+                          EdgeInsets.only(top: screenSize(context).width * .57),
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(20),
+                              topRight: Radius.circular(20))),
+                      child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -146,52 +145,46 @@ class _CityPageState extends State<CityPage> {
                                 style: h7Primary.copyWith(
                                     fontWeight: FontWeight.w500))),
                         GridView.count(
-                          physics: const NeverScrollableScrollPhysics(),
-                          padding: EdgeInsets.only(bottom: footerheight),
-                          childAspectRatio: 10 / 12.5,
-                          crossAxisCount: 2,
-                          shrinkWrap: true,
-                          children:
-                              List.generate(data['places'].length, (index) {
-                            return Container(
-                              margin: EdgeInsets.only(
-                                  bottom: screenSize(context).height * .015,
-                                  left: screenSize(context).width * .025,
-                                  right: screenSize(context).width * .025,
-                                  top: screenSize(context).height * .015),
-                              child: Column(
-                                children: [
-                                  AspectRatio(
-                                      aspectRatio: 1 / 1,
-                                      child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(20),
-                                          child: Image.network(
-                                              data['places'][index]['img'],
-                                              fit: BoxFit.cover))),
-                                  Container(
-                                      margin: EdgeInsets.only(
-                                          top:
-                                              screenSize(context).height * .01),
-                                      child: DsText(
-                                          maxLines: 1,
-                                          text: data['places'][index]['name'],
-                                          style: subTitlePrimary)),
-                                  Container(
-                                      margin: EdgeInsets.only(
-                                          top: screenSize(context).height *
-                                              .005),
-                                      child: const DsText(
-                                          text: 'Ponto Turístico',
-                                          style: textCard))
-                                ],
-                              ),
-                            );
-                          }),
-                        )
-                      ],
-                    ),
-                  )
+                            physics: const NeverScrollableScrollPhysics(),
+                            padding: EdgeInsets.only(bottom: footerheight),
+                            childAspectRatio: 10 / 12.5,
+                            crossAxisCount: 2,
+                            shrinkWrap: true,
+                            children:
+                                List.generate(data['places'].length, (index) {
+                              return Container(
+                                  margin: EdgeInsets.only(
+                                      bottom: screenSize(context).height * .015,
+                                      left: screenSize(context).width * .025,
+                                      right: screenSize(context).width * .025,
+                                      top: screenSize(context).height * .015),
+                                  child: Column(children: [
+                                    AspectRatio(
+                                        aspectRatio: 1 / 1,
+                                        child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            child: Image.network(
+                                                data['places'][index]['img'],
+                                                fit: BoxFit.cover))),
+                                    Container(
+                                        margin: EdgeInsets.only(
+                                            top: screenSize(context).height *
+                                                .01),
+                                        child: DsText(
+                                            maxLines: 1,
+                                            text: data['places'][index]['name'],
+                                            style: subTitlePrimary)),
+                                    Container(
+                                        margin: EdgeInsets.only(
+                                            top: screenSize(context).height *
+                                                .005),
+                                        child: const DsText(
+                                            text: 'Ponto Turístico',
+                                            style: textCard))
+                                  ]));
+                            }))
+                      ]))
                 ]),
             Container(
                 height: screenSize(context).width * .05,
@@ -199,7 +192,7 @@ class _CityPageState extends State<CityPage> {
                 child: IconButton(
                     icon: const Icon(Icons.arrow_back),
                     color: Colors.white,
-                    onPressed: () => backButtonAction(context))),
+                    onPressed: () => backButtonAction(context)))
           ]),
         ),
       );
