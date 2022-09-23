@@ -3,7 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class AppData with ChangeNotifier {
-  var data = [];
+  List<dynamic> data = [];
+  List<dynamic> favorites = [];
+
+  bool hasFavorite(cityName) {
+    return favorites.contains(cityName);
+  }
+
+  bool favorite(cityName) {
+    if (hasFavorite(cityName)) {
+      favorites.remove(cityName);
+      return false;
+    } else {
+      favorites.add(cityName);
+      return true;
+    }
+  }
 
   void setData(newData) {
     data = newData;

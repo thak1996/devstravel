@@ -45,6 +45,13 @@ const TextStyle h7Primary = TextStyle(
   color: primaryColor,
 );
 
+const TextStyle textCard = TextStyle(
+  fontSize: 11,
+  fontWeight: FontWeight.w400,
+  fontFamily: "Helvetica Neue",
+  color: grey,
+);
+
 const TextStyle textSimple = TextStyle(
   fontWeight: FontWeight.w400,
   fontFamily: "Helvetica Neue",

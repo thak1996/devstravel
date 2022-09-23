@@ -7,8 +7,8 @@ import 'package:devstravel/src/models/appdata.dart';
 class ListCityPage extends StatelessWidget {
   const ListCityPage({super.key});
 
-  void cityBoxAction(cityData) {
-    print(cityData['name']);
+  void cityBoxAction(context, data) {
+    Navigator.pushNamed(context, '/city', arguments: data);
   }
 
   @override
@@ -28,9 +28,8 @@ class ListCityPage extends StatelessWidget {
           crossAxisCount: 3,
           children: List.generate(cities.length, (index) {
             return CityBox(
-              data: cities[index],
-              onTap: cityBoxAction,
-            );
+                data: cities[index],
+                onTap: (data) => cityBoxAction(context, data));
           }),
         ),
       );

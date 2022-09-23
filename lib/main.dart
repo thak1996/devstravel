@@ -1,4 +1,5 @@
 import 'package:devstravel/src/models/appdata.dart';
+import 'package:devstravel/src/pages/city.dart';
 import 'package:devstravel/src/pages/continent.dart';
 import 'package:devstravel/src/pages/home.dart';
 import 'package:devstravel/src/pages/listcity.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/search': (context) => const SearchPage(),
         '/listcity': (context) => const ListCityPage(),
         '/continent': (context) => const ContinetPage(),
+        '/city': (context) => const CityPage(),
       },
     );
   }
