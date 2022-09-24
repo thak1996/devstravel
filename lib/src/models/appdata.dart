@@ -4,7 +4,18 @@ import 'package:http/http.dart' as http;
 
 class AppData with ChangeNotifier {
   List<dynamic> data = [];
-  var favorites = [];
+  List<dynamic> favorites = [];
+
+  List favoritesCities() {
+    List result = [];
+    for (var favorite in favorites) {
+      List foundCity = searchCity(favorite);
+      if (foundCity.isNotEmpty) {
+        result.add(foundCity[0]);
+      }
+    }
+    return result;
+  }
 
   List searchCity(text) {
     List result = [];

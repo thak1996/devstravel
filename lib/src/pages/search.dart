@@ -50,7 +50,7 @@ class _SearchPageState extends State<SearchPage> {
                     }),
                 Expanded(
                     child: GridView.count(
-                  crossAxisCount: 2,
+                  crossAxisCount: 3,
                   children: List.generate(list.length, (index) {
                     return CityBox(
                       data: list[index],
