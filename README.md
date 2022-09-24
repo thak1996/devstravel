@@ -7,7 +7,10 @@
  <a href="#funcionalidades">Funcionalidades</a> • 
  <a href="#iniciar">Iniciar</a> • 
  <a href="#autor">Autor</a>
-</p><br>
+</p>
+
+
+
 
 ## Descrição
 
