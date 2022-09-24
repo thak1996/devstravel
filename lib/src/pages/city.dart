@@ -56,74 +56,75 @@ class _CityPageState extends State<CityPage> {
                               topRight: Radius.circular(20))),
                       child: Column(children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                                margin: EdgeInsets.only(
-                                    left: screenSize(context).width * .04,
-                                    top: screenSize(context).height * .02),
-                                child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Container(
-                                          margin: EdgeInsets.only(
-                                              bottom:
-                                                  screenSize(context).height *
-                                                      .005),
-                                          child: DsText(
-                                              text: data['name'],
-                                              style: h5Primary)),
-                                      Row(children: [
-                                        Icon(Icons.star,
-                                            size: 16,
-                                            color: starRate > 0
-                                                ? Colors.blue
-                                                : Colors.grey),
-                                        Icon(Icons.star,
-                                            size: 16,
-                                            color: starRate > 1
-                                                ? Colors.blue
-                                                : Colors.grey),
-                                        Icon(Icons.star,
-                                            size: 16,
-                                            color: starRate > 2
-                                                ? Colors.blue
-                                                : Colors.grey),
-                                        Icon(Icons.star,
-                                            size: 16,
-                                            color: stars[3]
-                                                ? Colors.blue
-                                                : Colors.grey),
-                                        Icon(Icons.star,
-                                            size: 16,
-                                            color: stars[4]
-                                                ? Colors.blue
-                                                : Colors.grey),
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                  margin: EdgeInsets.only(
+                                      left: screenSize(context).width * .04,
+                                      top: screenSize(context).height * .02),
+                                  child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
                                         Container(
                                             margin: EdgeInsets.only(
-                                                left:
+                                                bottom:
                                                     screenSize(context).height *
-                                                        .01),
-                                            child: DsText(text: data['review']))
-                                      ])
-                                    ])),
-                            Container(
-                                margin: EdgeInsets.only(
-                                    right: screenSize(context).width * .05),
-                                child: IconButton(
-                                    icon: Icon(
-                                        color: Colors.red,
-                                        heart
-                                            ? Icons.favorite
-                                            : Icons.favorite_border),
-                                    onPressed: () {
-                                      setState(() {
-                                        heart = appdata.favorite(data['name']);
-                                      });
-                                    }))
-                          ],
-                        ),
+                                                        .005),
+                                            child: DsText(
+                                                text: data['name'],
+                                                style: h5Primary)),
+                                        Row(children: [
+                                          Icon(Icons.star,
+                                              size: 16,
+                                              color: starRate > 0
+                                                  ? Colors.blue
+                                                  : Colors.grey),
+                                          Icon(Icons.star,
+                                              size: 16,
+                                              color: starRate > 1
+                                                  ? Colors.blue
+                                                  : Colors.grey),
+                                          Icon(Icons.star,
+                                              size: 16,
+                                              color: starRate > 2
+                                                  ? Colors.blue
+                                                  : Colors.grey),
+                                          Icon(Icons.star,
+                                              size: 16,
+                                              color: stars[3]
+                                                  ? Colors.blue
+                                                  : Colors.grey),
+                                          Icon(Icons.star,
+                                              size: 16,
+                                              color: stars[4]
+                                                  ? Colors.blue
+                                                  : Colors.grey),
+                                          Container(
+                                              margin: EdgeInsets.only(
+                                                  left: screenSize(context)
+                                                          .height *
+                                                      .01),
+                                              child:
+                                                  DsText(text: data['review']))
+                                        ])
+                                      ])),
+                              Container(
+                                  margin: EdgeInsets.only(
+                                      right: screenSize(context).width * .05),
+                                  child: IconButton(
+                                      icon: Icon(
+                                          color: Colors.red,
+                                          heart
+                                              ? Icons.favorite
+                                              : Icons.favorite_border),
+                                      onPressed: () {
+                                        setState(() {
+                                          heart =
+                                              appdata.favorite(data['name']);
+                                        });
+                                      }))
+                            ]),
                         Container(
                             margin: EdgeInsets.only(
                                 bottom: screenSize(context).height * .015,

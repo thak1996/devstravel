@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const Preload(),
         '/home': (context) => const HomePage(),
+        '/city': (context) => const CityPage(),
         '/search': (context) => const SearchPage(),
         '/listcity': (context) => const ListCityPage(),
         '/continent': (context) => const ContinetPage(),
-        '/city': (context) => const CityPage(),
       },
     );
   }

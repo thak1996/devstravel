@@ -19,28 +19,27 @@ class DsAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: whiteColor,
-      elevation: 0,
-      centerTitle: false,
-      title: DsText(text: title, style: h5Primary),
-      leading: showBack
-          ? IconButton(
-              icon: const Icon(Icons.arrow_back, color: blackColor, size: 30),
-              onPressed: () => Navigator.pop(context))
-          : IconButton(
-              icon: const Icon(Icons.menu, color: blackColor, size: 30),
-              onPressed: () => Scaffold.of(context).openDrawer()),
-      actions: [
-        hideSearch
+        backgroundColor: whiteColor,
+        elevation: 0,
+        centerTitle: false,
+        title: DsText(text: title, style: h5Primary),
+        leading: showBack
             ? IconButton(
-                padding: EdgeInsets.only(
-                    right: screenSize(context).width * .03,
-                    left: screenSize(context).width * .02),
-                icon: const Icon(Icons.search, color: blackColor, size: 30),
-                onPressed: () => Navigator.pushNamed(context, '/search'))
-            : Container(),
-      ],
-    );
+                icon: const Icon(Icons.arrow_back, color: blackColor, size: 30),
+                onPressed: () => Navigator.pop(context))
+            : IconButton(
+                icon: const Icon(Icons.menu, color: blackColor, size: 30),
+                onPressed: () => Scaffold.of(context).openDrawer()),
+        actions: [
+          hideSearch
+              ? IconButton(
+                  padding: EdgeInsets.only(
+                      right: screenSize(context).width * .03,
+                      left: screenSize(context).width * .02),
+                  icon: const Icon(Icons.search, color: blackColor, size: 30),
+                  onPressed: () => Navigator.pushNamed(context, '/search'))
+              : Container()
+        ]);
   }
 
   @override

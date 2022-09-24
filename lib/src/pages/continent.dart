@@ -24,7 +24,8 @@ class ContinetPage extends StatelessWidget {
     return Consumer<AppData>(
       builder: (ctx, appdata, child) => Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
-        appBar: const DsAppBar(title: 'Escolha um continente'),
+        appBar:
+            const DsAppBar(title: 'Escolha um continente', hideSearch: true),
         drawer: const DsDrawer(),
         body: RefreshIndicator(
           onRefresh: () => Future<void>.delayed(const Duration(seconds: 3)),

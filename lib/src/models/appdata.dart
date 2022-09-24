@@ -4,11 +4,27 @@ import 'package:http/http.dart' as http;
 
 class AppData with ChangeNotifier {
   List<dynamic> data = [];
-  List<dynamic> favorites = [];
+  var favorites = [];
 
-  bool hasFavorite(cityName) {
-    return favorites.contains(cityName);
+  List searchCity(text) {
+    List result = [];
+    text = text.trim().toLowerCase();
+    if (text == '') {
+      return result;
+    }
+    for (var continents in data) {
+      for (var country in continents['countries']) {
+        for (var city in country['cities']) {
+          if (city['name'].toLowerCase().contains(text)) {
+            result.add(city);
+          }
+        }
+      }
+    }
+    return result;
   }
+
+  bool hasFavorite(cityName) => favorites.contains(cityName);
 
   bool favorite(cityName) {
     if (hasFavorite(cityName)) {
