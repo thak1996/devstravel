@@ -38,7 +38,7 @@ $ flutter run
 
 ## Autor
 
-Para poder entrar em contato com um de nossos desenvolvedores.
+Para poder entrar em contato caso tenha alguma sugestão ou melhoria.
 
 - [Franklyn Viana dos Santos](https://www.linkedin.com/in/franklyn-viana-dos-santos-553314169/)
 
